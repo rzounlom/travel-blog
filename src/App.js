@@ -1,7 +1,11 @@
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+
+import Footer from "./components/footer/Footer";
+import Home from "./components/home/Home";
+import Nav from "./components/nav/Navbar";
 import { ToastContainer } from "react-toastify";
 
 export default function App() {
@@ -19,8 +23,9 @@ export default function App() {
         pauseOnHover
         theme="light"
       />
-
-      <h1>blog</h1>
+      <Nav />
+      <Home />
+      <Footer />
     </>
   );
 }

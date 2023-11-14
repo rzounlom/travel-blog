@@ -1,5 +1,23 @@
-const Navbar = () => {
-  return <div>Navbar</div>;
-};
+import "./Navbar.css";
 
-export default Navbar;
+import { Link } from "react-router-dom";
+
+function Nav() {
+  return (
+    <nav>
+      <div className="logo">
+        <Link to="/">MTB</Link>
+      </div>
+      <ul>
+        <li>
+          <Link to="/stories">Stories</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
+
+export default Nav;
