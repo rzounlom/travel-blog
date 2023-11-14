@@ -3,9 +3,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
+import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
-import Nav from "./components/nav/Navbar";
+import Navbar from "./components/nav/Navbar";
+import Posts from "./components/posts/Posts";
 import { ToastContainer } from "react-toastify";
 
 export default function App() {
@@ -23,8 +25,15 @@ export default function App() {
         pauseOnHover
         theme="light"
       />
-      <Nav />
-      <Home />
+
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" render={() => <Home />} />
+          <Route path="/stories" render={() => <Posts />} />
+          <Route path="/contact" render={() => <Contact />} />
+        </Switch>
+      </Router>
       <Footer />
     </>
   );
