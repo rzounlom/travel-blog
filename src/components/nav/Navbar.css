@@ -1,5 +1,5 @@
 nav {
-  height: 8vh;
+  height: 6vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -32,5 +32,5 @@ nav ul li:nth-of-type(1) {
 }
 
 nav ul li:hover {
-  color: lightgray;
+  color: darkgray;
 }

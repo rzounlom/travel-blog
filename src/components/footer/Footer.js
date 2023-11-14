@@ -1,7 +1,11 @@
-import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer>
+      <div>Copyright (c) 2023 My Travel Blog</div>
+    </footer>
+  );
 };
 
 export default Footer;
