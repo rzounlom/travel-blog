@@ -3,7 +3,7 @@ import "./Posts.css";
 import { useEffect, useState } from "react";
 
 import PostList from "./PostList";
-import Spinner from "react-bootstrap/Spinner";
+import { Spinner } from "react-bootstrap";
 // import { defaultPosts } from "../../data/posts";
 import { getPosts } from "../../services/postsService";
 
