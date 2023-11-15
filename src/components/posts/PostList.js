@@ -4,28 +4,15 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import PostCard from "./PostCard";
 
-const PostList = () => {
+const PostList = ({ posts }) => {
   return (
     <Container className="post-list">
       <Row>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
-        <Col lg={4} md={6}>
-          <PostCard />
-        </Col>
+        {posts.map((post) => (
+          <Col key={post.id} lg={4} md={6}>
+            <PostCard post={post} />
+          </Col>
+        ))}
       </Row>
     </Container>
   );

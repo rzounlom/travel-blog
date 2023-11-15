@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import Navbar from "./components/nav/Navbar";
 import Posts from "./components/posts/Posts";
+import SinglePost from "./components/posts/SinglePost";
 import { ToastContainer } from "react-toastify";
 
 export default function App() {
@@ -30,7 +31,8 @@ export default function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" render={() => <Home />} />
-          <Route path="/stories" render={() => <Posts />} />
+          <Route exact path="/posts/:storyId" render={() => <SinglePost />} />
+          <Route path="/posts" render={() => <Posts />} />
           <Route path="/contact" render={() => <Contact />} />
         </Switch>
       </Router>

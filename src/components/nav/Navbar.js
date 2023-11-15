@@ -10,7 +10,7 @@ function Nav() {
       </div>
       <ul>
         <li>
-          <Link to="/stories">Stories</Link>
+          <Link to="/posts">Posts</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

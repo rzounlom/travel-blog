@@ -1,4 +1,4 @@
-export const posts = [
+export const defaultPosts = [
   {
     id: "1",
     createdAt: "2023-04-13T01:00:52.546Z",

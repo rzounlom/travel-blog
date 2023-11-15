@@ -3,7 +3,7 @@ import "./Contact.css";
 import { Container } from "react-bootstrap";
 
 const Contact = () => {
-  return <Container className="contact">Contact</Container>;
+  return <dive className="contact">Contact</dive>;
 };
 
 export default Contact;
