@@ -1,7 +1,14 @@
 import "./Posts.css";
 
+import { Container } from "react-bootstrap";
+import PostList from "./PostList";
+
 const Posts = () => {
-  return <div className="posts">Posts</div>;
+  return (
+    <Container className="posts">
+      <PostList />
+    </Container>
+  );
 };
 
 export default Posts;
