@@ -6,6 +6,7 @@ import { getPostById, updatePost } from "../../services/postsService";
 import { useEffect, useState } from "react";
 
 import CommentsList from "./CommentsList";
+import { toast } from "react-toastify";
 
 // const testPost = {
 //   id: "post001",
@@ -30,16 +31,42 @@ const SinglePost = () => {
 
   const [loading, setLoading] = useState(false);
   const [post, setPost] = useState({}); // initialize post state variable
+  const [comment, setComment] = useState([]); // initialize comments state variable
 
   const fetchPost = async () => {
     try {
       setLoading(true);
       const foundPost = await getPostById(postId);
-      console.log(foundPost);
+      // console.log(foundPost);
       setPost(foundPost);
     } catch (error) {
       console.error(error);
     } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setComment(event.target.value);
+  };
+
+  const submitComment = async (event) => {
+    event.preventDefault();
+    if (!comment) {
+      toast.error("Please enter a comment");
+      return;
+    }
+    try {
+      setLoading(true);
+      const updatedPost = await updatePost(postId, {
+        comments: [...post.comments, comment],
+      });
+      // console.log(updatedPost);
+      setPost(updatedPost);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setComment("");
       setLoading(false);
     }
   };
@@ -82,8 +109,15 @@ const SinglePost = () => {
                 <h5 style={{ color: "darkgray", textAlign: "center" }}>
                   Add a comment
                 </h5>
-                <input type="text" placeholder="Your comment" />
-                <Button variant="outline-primary">Submit</Button>
+                <input
+                  type="text"
+                  value={comment}
+                  onChange={handleInputChange}
+                  placeholder="Your comment"
+                />
+                <Button variant="outline-primary" onClick={submitComment}>
+                  Submit
+                </Button>
               </div>
 
               {loading ? (

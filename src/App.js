@@ -1,7 +1,7 @@
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
@@ -27,15 +27,14 @@ export default function App() {
         theme="light"
       />
 
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/posts/:postId" render={() => <SinglePost />} />
-          <Route path="/posts" render={() => <Posts />} />
-          <Route path="/contact" render={() => <Contact />} />
-        </Switch>
-      </Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" render={() => <Home />} />
+        <Route path="/posts/:postId" render={() => <SinglePost />} />
+        <Route path="/posts" render={() => <Posts />} />
+        <Route path="/contact" render={() => <Contact />} />
+      </Switch>
+
       <Footer />
     </>
   );

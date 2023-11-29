@@ -1,9 +1,13 @@
 import "./Contact.css";
 
-import { Container } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 
 const Contact = () => {
-  return <dive className="contact">Contact</dive>;
+  return (
+    <div className="contact">
+      <h1>Contact</h1>
+    </div>
+  );
 };
 
 export default Contact;
