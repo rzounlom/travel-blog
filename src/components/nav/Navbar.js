@@ -1,5 +1,6 @@
 import "./Navbar.css";
 
+import CreatePostModal from "../modals/CreatePostModal";
 import { Link } from "react-router-dom";
 
 function Nav() {
@@ -14,6 +15,9 @@ function Nav() {
         </li>
         <li>
           <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <CreatePostModal />
         </li>
       </ul>
     </nav>
