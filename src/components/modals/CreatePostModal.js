@@ -28,6 +28,12 @@ function CreatePostModal() {
   const history = useHistory();
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [postData, setPostData] = useState({
+    author: "",
+    destination: "",
+    imgUrl: "",
+    story: "",
+  });
 
   const handleClose = () => {
     setPostData({
@@ -40,13 +46,6 @@ function CreatePostModal() {
   };
 
   const handleShow = () => setShow(true);
-
-  const [postData, setPostData] = useState({
-    author: "",
-    destination: "",
-    imgUrl: "",
-    story: "",
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -146,7 +145,7 @@ function CreatePostModal() {
             Close
           </Button>
           <Button variant="primary" onClick={handleSubmit}>
-            Save Changes
+            Submit
           </Button>
         </Modal.Footer>
       </Modal>
