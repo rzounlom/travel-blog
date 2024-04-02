@@ -1,3 +1,5 @@
+import "./CreatePostModal.css";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -78,7 +80,7 @@ function CreatePostModal() {
   };
 
   return (
-    <>
+    <div className="create-post-modal">
       <Button variant="primary" onClick={handleShow}>
         Create Post
       </Button>
@@ -149,7 +151,7 @@ function CreatePostModal() {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 }
 
